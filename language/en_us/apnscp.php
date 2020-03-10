@@ -3,7 +3,7 @@
  * en_us language for the apnscp module.
  */
 // Basics
-$lang['Apnscp.name'] = 'APNSCP';
+$lang['Apnscp.name'] = 'ApisCP';
 $lang['Apnscp.module_row.name'] = 'Server';
 $lang['Apnscp.module_row_plural.name'] = 'Servers';
 $lang['Apnscp.module_group.name'] = 'Server Group';
@@ -37,7 +37,7 @@ $lang['Apnscp.order_options.first'] = 'First Non-full Server';
 $lang['Apnscp.order_options.roundrobin'] = 'Evenly Distribute Among Servers';
 
 // Add row
-$lang['Apnscp.add_row.box_title'] = 'Add APNSCP Server';
+$lang['Apnscp.add_row.box_title'] = 'Add ApisCP Server';
 $lang['Apnscp.add_row.basic_title'] = 'Basic Settings';
 $lang['Apnscp.add_row.name_servers_title'] = 'Name Servers';
 $lang['Apnscp.add_row.notes_title'] = 'Notes';
@@ -48,7 +48,7 @@ $lang['Apnscp.add_row.name_server'] = 'Name server %1$s'; // %1$s is the name se
 $lang['Apnscp.add_row.remove_name_server'] = 'Remove';
 $lang['Apnscp.add_row.add_btn'] = 'Add Server';
 
-$lang['Apnscp.edit_row.box_title'] = 'Edit APNSCP Server';
+$lang['Apnscp.edit_row.box_title'] = 'Edit ApisCP Server';
 $lang['Apnscp.edit_row.basic_title'] = 'Basic Settings';
 $lang['Apnscp.edit_row.name_servers_title'] = 'Name Servers';
 $lang['Apnscp.edit_row.notes_title'] = 'Notes';
@@ -68,7 +68,7 @@ $lang['Apnscp.row_meta.use_ssl'] = 'Use SSL when connecting to the API (recommen
 $lang['Apnscp.row_meta.account_limit'] = 'Account Limit';
 
 // Package fields
-$lang['Apnscp.package_fields.package'] = 'APNSCP Package';
+$lang['Apnscp.package_fields.package'] = 'ApisCP Package';
 
 // Service fields
 $lang['Apnscp.service_field.domain'] = 'Domain';
@@ -114,7 +114,7 @@ $lang['Apnscp.!error.api_key_valid_connection'] = 'A connection to the server co
 $lang['Apnscp.!error.account_limit_valid'] = 'Account Limit must be left blank (for unlimited accounts) or set to some integer value.';
 $lang['Apnscp.!error.name_servers_valid'] = 'One or more of the name servers entered are invalid.';
 $lang['Apnscp.!error.name_servers_count'] = 'You must define at least 2 name servers.';
-$lang['Apnscp.!error.meta[package].empty'] = 'A APNSCP Package is required.';
+$lang['Apnscp.!error.meta[package].empty'] = 'An ApisCP Package is required.';
 $lang['Apnscp.!error.api.internal'] = 'An internal error occurred, or the server did not respond to the request.';
 $lang['Apnscp.!error.module_row.missing'] = 'An internal error occurred. The module row is unavailable.';
 
