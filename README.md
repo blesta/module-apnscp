@@ -1,6 +1,6 @@
-# APNSCP Module
+# ApisCP Module
 
-A Blesta module that integrates with [APNSCP](https://www.apnscp.com).
+A Blesta module that integrates with [ApisCP](https://apiscp.com), formerly called APNSCP.
 
 Originally created by Phillips Data, Inc.
 
