@@ -4,6 +4,7 @@
  */
 // Basics
 $lang['Apnscp.name'] = 'ApisCP';
+$lang['Apnscp.description'] = 'Formerly called APNSCP.';
 $lang['Apnscp.module_row.name'] = 'Server';
 $lang['Apnscp.module_row_plural.name'] = 'Servers';
 $lang['Apnscp.module_group.name'] = 'Server Group';
