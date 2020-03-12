@@ -1,6 +1,6 @@
 {
     "name": "blesta/apnscp",
-    "description": "APNSCP",
+    "description": "ApiSCP",
     "license": "proprietary",
     "type": "blesta-module",
     "require": {
