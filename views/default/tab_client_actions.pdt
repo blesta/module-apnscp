@@ -13,7 +13,7 @@
                 ?>
             </div>
         </div>
-        <button class="btn btn-default pull-right">
+        <button class="btn btn-light float-right">
             <i class="fas fa-edit"></i> <?php $this->_('Apnscp.tab_client_actions.field_password_submit'); ?>
         </button>
         <?php
