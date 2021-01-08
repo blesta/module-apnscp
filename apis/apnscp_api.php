@@ -8,8 +8,14 @@
  * @license http://www.blesta.com/license/ The Blesta License Agreement
  * @link http://www.blesta.com/ Blesta
  */
+
+use Blesta\Core\Util\Common\Traits\Container;
+
 class ApnscpApi
 {
+    // Load traits
+    use Container;
+
     /**
      * @var string The server hostname
      */
@@ -62,6 +68,11 @@ class ApnscpApi
         // Create SOAP connection
         ini_set('default_socket_timeout', 5000);
 
+	$headers = [
+            'Abort-On: error',
+            'X-Forwarded-For: ' . $this->getFromContainer('requestor')->ip_address
+	];
+
         $client = new SoapClient($soap_location . '/apnscp.wsdl', [
             'location' => $soap_location . '/soap?authkey=' . $this->api_key,
             'uri' => 'urn:net.apnscp.soap',
@@ -70,6 +81,9 @@ class ApnscpApi
                 'ssl' => [
                     'verify_peer' => false,
                     'verify_peer_name' => false
+	        ],
+		'http' => [
+                    'header' => implode("\r\n", $headers) . "\r\n"
                 ]
             ])
         ]);
