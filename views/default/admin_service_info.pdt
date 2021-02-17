@@ -13,7 +13,7 @@
             <td><?php $this->Html->_($module_row->meta->host_name); ?></td>
             <td>
                 <?php
-                if ($this->Html->ifSet($login_url)) {
+                if ((isset($login_url) ? $login_url : null)) {
                     ?>
                     <a href="<?php $this->Html->_($login_url);?>" target="_blank"><?php $this->_('Apnscp.service_info.option_login');?></a>
                     <?php

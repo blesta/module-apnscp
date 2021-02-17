@@ -125,7 +125,7 @@ class Apnscp extends Module
             $fields->fieldSelect(
                 'meta[package]',
                 $packages,
-                $this->Html->ifSet($vars->meta['package']),
+                (isset($vars->meta['package']) ? $vars->meta['package'] : null),
                 ['id' => 'apnscp_package']
             )
         );
@@ -394,7 +394,7 @@ class Apnscp extends Module
         $domain->attach(
             $fields->fieldText(
                 'apnscp_domain',
-                $this->Html->ifSet($vars->apnscp_domain),
+                (isset($vars->apnscp_domain) ? $vars->apnscp_domain : null),
                 ['id' => 'apnscp_domain']
             )
         );
@@ -407,7 +407,7 @@ class Apnscp extends Module
         $username->attach(
             $fields->fieldText(
                 'apnscp_username',
-                $this->Html->ifSet($vars->apnscp_username),
+                (isset($vars->apnscp_username) ? $vars->apnscp_username : null),
                 ['id' => 'apnscp_username']
             )
         );
@@ -423,7 +423,7 @@ class Apnscp extends Module
         $password->attach(
             $fields->fieldPassword(
                 'apnscp_password',
-                ['id' => 'apnscp_password', 'value' => $this->Html->ifSet($vars->apnscp_password)]
+                ['id' => 'apnscp_password', 'value' => (isset($vars->apnscp_password) ? $vars->apnscp_password : null)]
             )
         );
         // Add tooltip
@@ -485,7 +485,7 @@ class Apnscp extends Module
         $domain->attach(
             $fields->fieldText(
                 'apnscp_domain',
-                $this->Html->ifSet($vars->apnscp_domain),
+                (isset($vars->apnscp_domain) ? $vars->apnscp_domain : null),
                 ['id' => 'apnscp_domain']
             )
         );
@@ -498,7 +498,7 @@ class Apnscp extends Module
         $username->attach(
             $fields->fieldText(
                 'apnscp_username',
-                $this->Html->ifSet($vars->apnscp_username),
+                (isset($vars->apnscp_username) ? $vars->apnscp_username : null),
                 ['id' => 'apnscp_username']
             )
         );
@@ -514,7 +514,7 @@ class Apnscp extends Module
         $password->attach(
             $fields->fieldPassword(
                 'apnscp_password',
-                ['id' => 'apnscp_password', 'value' => $this->Html->ifSet($vars->apnscp_password)]
+                ['id' => 'apnscp_password', 'value' => (isset($vars->apnscp_password) ? $vars->apnscp_password : null)]
             )
         );
         // Add tooltip
@@ -1029,8 +1029,8 @@ class Apnscp extends Module
         $service_fields = $this->serviceFieldsToObject($service->fields);
         $session = $this->getUserSession(
             $row,
-            $this->Html->ifSet($service_fields->apnscp_domain),
-            $this->Html->ifSet($service_fields->apnscp_username)
+            (isset($service_fields->apnscp_domain) ? $service_fields->apnscp_domain : null),
+            (isset($service_fields->apnscp_username) ? $service_fields->apnscp_username : null)
         );
 
         $this->view->set('module_row', $row);
@@ -1066,8 +1066,8 @@ class Apnscp extends Module
         $service_fields = $this->serviceFieldsToObject($service->fields);
         $session = $this->getUserSession(
             $row,
-            $this->Html->ifSet($service_fields->apnscp_domain),
-            $this->Html->ifSet($service_fields->apnscp_username)
+            (isset($service_fields->apnscp_domain) ? $service_fields->apnscp_domain : null),
+            (isset($service_fields->apnscp_username) ? $service_fields->apnscp_username : null)
         );
 
         $this->view->set('module_row', $row);
@@ -1195,7 +1195,7 @@ class Apnscp extends Module
         if (!empty($post)) {
             Loader::loadModels($this, ['Services']);
             $data = array_merge((array) $service_fields, [
-                'apnscp_password' => $this->Html->ifSet($post['apnscp_password'])
+                'apnscp_password' => (isset($post['apnscp_password']) ? $post['apnscp_password'] : null)
             ]);
 
             $this->Services->edit($service->id, $data);

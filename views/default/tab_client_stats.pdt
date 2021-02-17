@@ -3,11 +3,11 @@
     <label><?php $this->_('Apnscp.tab_client_stats.disk_title');?></label>
     <?php
     $disk = [
-        'used' => round($this->Html->ifSet($stats->disk['used'], 0), 2),
-        'limit' => round($this->Html->ifSet($stats->disk['total'], 0), 2)
+        'used' => round((isset($stats->disk['used']) ? $stats->disk['used'] : 0), 2),
+        'limit' => round((isset($stats->disk['total']) ? $stats->disk['total'] : 0), 2)
     ];
     $unlimited = empty($disk['limit']);
-    $percent_used = ($unlimited ? 0 : round(($this->Html->ifSet($disk['used'], 0) / $this->Html->ifSet($disk['limit'])) * 100, 0));
+    $percent_used = ($unlimited ? 0 : round(((isset($disk['used']) ? $disk['used'] : 0) / (isset($disk['limit']) ? $disk['limit'] : null)) * 100, 0));
     ?>
     <small>
         <?php echo ($unlimited ? $this->_('Apnscp.tab_client_stats.usage_unlimited', true, $this->Html->safe($disk['used'])) : $this->_('Apnscp.tab_client_stats.usage', true, $this->Html->safe($disk['used']), $this->Html->safe($disk['limit'])));?>
@@ -21,11 +21,11 @@
     <label><?php $this->_('Apnscp.tab_client_stats.bandwidth_title');?></label>
     <?php
     $bandwidth = [
-        'used' => round($this->Html->ifSet($stats->bandwidth['used'], 0), 2),
-        'limit' => round($this->Html->ifSet($stats->bandwidth['total'], 0), 2)
+        'used' => round((isset($stats->bandwidth['used']) ? $stats->bandwidth['used'] : 0), 2),
+        'limit' => round((isset($stats->bandwidth['total']) ? $stats->bandwidth['total'] : 0), 2)
     ];
     $unlimited = empty($bandwidth['limit']);
-    $percent_used = ($unlimited ? 0 : round(($this->Html->ifSet($bandwidth['used'], 0) / $this->Html->ifSet($bandwidth['limit'])) * 100, 0));
+    $percent_used = ($unlimited ? 0 : round(((isset($bandwidth['used']) ? $bandwidth['used'] : 0) / (isset($bandwidth['limit']) ? $bandwidth['limit'] : null)) * 100, 0));
     ?>
     <small>
         <?php echo ($unlimited ? $this->_('Apnscp.tab_client_stats.usage_unlimited', true, $this->Html->safe($bandwidth['used'])) : $this->_('Apnscp.tab_client_stats.usage', true, $this->Html->safe($bandwidth['used']), $this->Html->safe($bandwidth['limit'])));?>
