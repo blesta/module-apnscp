@@ -455,7 +455,7 @@ class Apnscp extends Module
         $domain->attach(
             $fields->fieldText(
                 'apnscp_domain',
-                $this->Html->ifSet($vars->apnscp_domain, $this->Html->ifSet($vars->domain)),
+                (isset($vars->apnscp_domain) ? $vars->apnscp_domain : ($vars->domain ?? null)),
                 ['id' => 'apnscp_domain']
             )
         );
