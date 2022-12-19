@@ -3,8 +3,8 @@
     <label><?php $this->_('Apnscp.tab_client_stats.disk_title');?></label>
     <?php
     $disk = [
-        'used' => round(($stats->disk['used'] ?? 0), 2),
-        'limit' => round(max($stats->disk['total'] ?? 0, 1), 2)
+        'used' => round($stats->disk['used'] ?? 0, 2),
+        'limit' => round($stats->disk['total'] ?? 0, 2)
     ];
     $unlimited = empty($disk['limit']);
     $percent_used = ($unlimited ? 0 : round(($disk['used'] / $disk['limit']) * 100, 0));
@@ -21,8 +21,8 @@
     <label><?php $this->_('Apnscp.tab_client_stats.bandwidth_title');?></label>
     <?php
     $bandwidth = [
-        'used' => round(($stats->bandwidth['used'] ?? 0), 2),
-        'limit' => round(max($stats->bandwidth['total'] ?? 0, 1), 2)
+        'used' => round($stats->bandwidth['used'] ?? 0, 2),
+        'limit' => round($stats->bandwidth['total'] ?? 0, 2)
     ];
     $unlimited = empty($bandwidth['limit']);
     $percent_used = ($unlimited ? 0 : round(($bandwidth['used'] / $bandwidth['limit']) * 100, 0));
