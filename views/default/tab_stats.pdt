@@ -1,6 +1,4 @@
-<?php
-/** @var View $this **/
-?>
+<?php /** @var View $this **/ ?>
 
 <h6 class="form-section-header"><?php $this->_('Apnscp.tab_stats.info_title'); ?></h6>
 <div class="mb-3">
