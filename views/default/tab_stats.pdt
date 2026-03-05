@@ -1,6 +1,8 @@
-<?php /** @var View $this **/ ?>
+<?php
+/** @var View $this **/
+?>
 
-<h6 class="form-section-header"><?php $this->_('Apnscp.tab_stats.info_title');?></h6>
+<h6 class="form-section-header"><?php $this->_('Apnscp.tab_stats.info_title'); ?></h6>
 <div class="mb-3">
     <table class="table">
         <thead>
@@ -13,14 +15,16 @@
             <?php
             $keys = ['disk', 'bandwidth'];
             foreach ($keys as $i => $key) {
-                if (isset($stats->{$key})) {
-            ?>
+                if (isset($stats->{$key})) { ?>
             <tr>
                 <td><?php $this->_('Apnscp.tab_stats.info.' . $key); ?></td>
-                <td><?php echo $this->Html->safe(round($stats->{$key}['used'], 2)) . ' MB /' . $this->Html->safe($stats->{$key}['total'] == '-1' ? '∞' : round($stats->{$key}['total'], 2) . ' MB'); ?></td>
+                <td><?php echo $this->Html->safe(round($stats->{$key}['used'], 2)) .
+                    ' MB /' .
+                    $this->Html->safe(
+                        $stats->{$key}['total'] == '-1' ? '∞' : round($stats->{$key}['total'], 2) . ' MB',
+                    ); ?></td>
             </tr>
-            <?php
-                }
+            <?php }
             }
             ?>
         </tbody>
