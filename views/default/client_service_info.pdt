@@ -22,11 +22,11 @@
                         ? $this->Html->safe($module_row->meta->host_name)
                         : null; ?></td>
                     <td>
-                        <?php if (isset($login_url) ? $login_url : null) { ?>
+                        <?php if ($login_url ?? null) { ?>
                             <a href="<?php echo isset($login_url)
                                 ? $this->Html->safe($login_url)
                                 : null; ?>" target="_blank"><?php $this->_('Apnscp.service_info.option_login'); ?></a>
-                            <?php } ?>
+                        <?php } ?>
                     </td>
                 </tr>
             </tbody>

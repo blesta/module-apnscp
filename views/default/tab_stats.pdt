@@ -22,7 +22,7 @@
                         $stats->{$key}['total'] == '-1' ? '∞' : round($stats->{$key}['total'], 2) . ' MB',
                     ); ?></td>
             </tr>
-            <?php }
+                <?php }
             }
             ?>
         </tbody>

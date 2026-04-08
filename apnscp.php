@@ -124,7 +124,7 @@ class Apnscp extends Module
         $package->attach(
             $fields->fieldSelect(
                 'meta[package]',
-                $packages,
+                $packages ?: ['a' => 'a'],
                 ($vars->meta['package'] ?? null),
                 ['id' => 'apnscp_package']
             )
