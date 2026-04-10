@@ -696,7 +696,7 @@ class Apnscp extends Module
             // Create account on remote server
             $masked_params = $params;
             $masked_params['password'] = '***';
-            $this->log($row->meta->host_name . '|admin_add_site', safe_serialize($masked_params), 'input', true);
+            $this->log($row->meta->host_name . '|admin_add_site', serialize($masked_params), 'input', true);
             unset($masked_params);
 
             $this->parseResponse($api->createAccount($params));
@@ -789,7 +789,7 @@ class Apnscp extends Module
                 ];
                 $masked_params = $params;
                 $masked_params['password'] = '***';
-                $this->log($row->meta->host_name . '|auth_change_password', safe_serialize($masked_params), 'input', true);
+                $this->log($row->meta->host_name . '|auth_change_password', serialize($masked_params), 'input', true);
                 unset($masked_params);
 
                 $this->parseResponse($api->updateAccountPassword($params));
@@ -847,7 +847,7 @@ class Apnscp extends Module
             // Delete account
             $this->log(
                 $row->meta->host_name . '|admin_deactivate_site',
-                safe_serialize($service_fields->apnscp_domain),
+                serialize($service_fields->apnscp_domain),
                 'input',
                 true
             );
@@ -890,7 +890,7 @@ class Apnscp extends Module
             // Delete account
             $this->log(
                 $row->meta->host_name . '|admin_activate_site',
-                safe_serialize($service_fields->apnscp_domain),
+                serialize($service_fields->apnscp_domain),
                 'input',
                 true
             );
@@ -933,7 +933,7 @@ class Apnscp extends Module
             // Delete account
             $this->log(
                 $row->meta->host_name . '|admin_delete_site',
-                safe_serialize($service_fields->apnscp_domain),
+                serialize($service_fields->apnscp_domain),
                 'input',
                 true
             );
@@ -987,7 +987,7 @@ class Apnscp extends Module
                 // Change service package
                 $this->log(
                     $row->meta->host_name . '|admin_edit_site',
-                    safe_serialize([$service_fields->apnscp_domain, $package_to->meta->package]),
+                    serialize([$service_fields->apnscp_domain, $package_to->meta->package]),
                     'input',
                     true
                 );
@@ -1162,7 +1162,7 @@ class Apnscp extends Module
         // Get statistics
         $this->log(
             $row->meta->host_name . '|admin_hijack',
-            safe_serialize($service_fields->apnscp_domain),
+            serialize($service_fields->apnscp_domain),
             'input',
             true
         );
@@ -1451,7 +1451,7 @@ class Apnscp extends Module
         // Log the response
         $this->log(
             $row->meta->host_name,
-            safe_serialize($response),
+            serialize($response),
             'output',
             $success
         );
@@ -1507,7 +1507,7 @@ class Apnscp extends Module
                 $success = true;
             }
 
-            $this->log($module_row->meta->host_name, safe_serialize($packages), 'output', $success);
+            $this->log($module_row->meta->host_name, serialize($packages), 'output', $success);
         } catch (Exception $e) {
             // API request failed
         }
@@ -1532,7 +1532,7 @@ class Apnscp extends Module
             $module_row->meta->port
         );
 
-        $this->log($module_row->meta->host_name . '|admin_hijack', safe_serialize([$domain, $username]), 'input', true);
+        $this->log($module_row->meta->host_name . '|admin_hijack', serialize([$domain, $username]), 'input', true);
         $response = $this->parseResponse($api->getSsoLink($domain, $username));
 
         if (isset($response->error)) {
