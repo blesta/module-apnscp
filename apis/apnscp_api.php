@@ -218,7 +218,7 @@ class ApnscpApi
      */
     public function updateAccountPlan($params)
     {
-        return $this->apiRequest('admin_edit_site', [$params['domain'], ['siteinfo.plan' => $params['plan'], ['reset' => true]]]);
+        return $this->apiRequest('admin_edit_site', [$params['domain'], ['siteinfo.plan' => $params['plan']], ['reset' => true]]);
     }
 
     /**
