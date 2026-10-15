@@ -791,7 +791,7 @@ class Apnscp extends Module
             // Check for fields that changed
             $delta = [];
             foreach ($vars as $key => $value) {
-                if (!array_key_exists($key, $service_fields) || $vars[$key] != $service_fields->$key) {
+                if (!property_exists($service_fields, $key) || $vars[$key] != $service_fields->$key) {
                     $delta[$key] = $value;
                 }
             }
